@@ -1,0 +1,37 @@
+.c-dark {
+  color: var(--font-dark);
+  fill: var(--font-dark);
+}
+.c-grey {
+  color: var(--font-grey);
+  fill: var(--font-grey);
+}
+
+.c-grey-1 {
+  color: var(--font-grey-1);
+  fill: var(--font-grey-1);
+}
+
+.c-red {
+  color: var(--gradient-red);
+  fill: var(--gradient-red);
+}
+
+.c-orange {
+  color: var(--gradient-orange);
+  fill: var(--gradient-orange);
+}
+.c-blue {
+  color: var(--font-blue);
+  fill: var(--font-blue);
+}
+
+.c-purple {
+  color: var(--purple-1);
+  fill: var(--purple-1);
+}
+
+.c-white {
+  color: #fff;
+  fill: #fff;
+}

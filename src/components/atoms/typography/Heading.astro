@@ -1,0 +1,23 @@
+---
+const { level, color } = Astro.props
+
+const classes = ['c-dark', {
+  'c-dark': color === 'dark',
+  'c-grey': color === 'grey',
+  'c-red': color === 'red',
+  'c-orange': color === 'orange',
+  'c-blue': color === 'blue',
+  'c-purple': color === 'purple',
+  'c-white': color === 'white'
+}];
+---
+
+<>
+  { level === 1 && <h1 class:list={[classes]}> <slot /> </h1> }
+  { level === 2 && <h2 class:list={[classes]}> <slot /> </h2> }
+  { level === 3 && <h3 class:list={[classes]}> <slot /> </h3> }
+  { level === 4 && <h4 class:list={[classes]}> <slot /> </h4> }
+  { level === 5 && <h5 class:list={[classes]}> <slot /> </h5> }
+  { level === 6 && <h6 class:list={[classes]}> <slot /> </h6> }
+</>
+

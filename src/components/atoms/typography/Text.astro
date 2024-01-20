@@ -1,0 +1,29 @@
+---
+const {color, variant} = Astro.props
+---
+<p class:list={[
+    {
+      "c-dark": color=== 'dark',
+      "c-blue": color=== 'blue',
+      "c-grey": color=== 'grey',
+      "primary": variant === 'primary',
+      "secondary": variant === 'secondary'
+    },
+  ]}>
+  <slot />
+</p>
+
+<style>
+  p{
+    font-weight: 500;
+    line-height: 3rem;
+    margin: 0;
+  }
+  .primary {
+    font-size: 1.6rem;
+  }
+
+  .secondary {
+    font-size: 1.4rem
+  }
+</style>
