@@ -1,0 +1,23 @@
+---
+import FeatureImage from '../../atoms/images/FeatureImage.astro';
+import FeatureImagePhone from '../../atoms/images/FeatureImagePhone.astro';
+import Background1 from '../animations/Background1.astro';
+---
+
+<div class="feature-section">
+  <FeatureImage img="/assets/quince.png" alt="quince años invitación wenvel" />
+  <FeatureImagePhone img="/assets/bautizo_phone_1.png" alt="bautizo invitaccion wenvel" />
+  <Background1 />
+</div>
+
+
+<style>
+  .feature-section {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 90px
+  }
+</style>

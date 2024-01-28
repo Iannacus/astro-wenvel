@@ -1,0 +1,16 @@
+---
+const {img, alt} = Astro.props;
+---
+
+<img class="image rounded" src={img} alt={alt} />
+
+<style>
+  .image {
+    position: absolute;
+    left: -20%;
+    z-index: 2;
+    filter: drop-shadow(0px 35px 25px var(--blue-rgba-4));
+    max-width: 100%;
+    -webkit-text-fill-color: transparent;
+  }
+</style>

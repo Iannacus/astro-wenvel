@@ -1,0 +1,13 @@
+---
+const { color } = Astro.props;
+---
+
+<div class="gradient" />
+
+<style define:vars={{color}}>
+  .gradient {
+    background: var(--color);
+    width: 200px;
+    height: 200px;
+  }
+</style>
