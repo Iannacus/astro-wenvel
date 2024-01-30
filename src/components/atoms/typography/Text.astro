@@ -1,20 +1,24 @@
 ---
-const {color, variant} = Astro.props
+const { color, variant } = Astro.props;
 ---
-<p class:list={[
+
+<p
+  class:list={[
     {
-      "c-dark": color=== 'dark',
-      "c-blue": color=== 'blue',
-      "c-grey": color=== 'grey',
-      "primary": variant === 'primary',
-      "secondary": variant === 'secondary'
+      gradient: color === "gradient",
+      "c-dark": color === "dark",
+      "c-blue": color === "blue",
+      "c-grey": color === "grey",
+      primary: variant === "primary",
+      secondary: variant === "secondary",
     },
-  ]}>
+  ]}
+>
   <slot />
 </p>
 
 <style>
-  p{
+  p {
     font-weight: 500;
     line-height: 3rem;
     margin: 0;
@@ -24,6 +28,6 @@ const {color, variant} = Astro.props
   }
 
   .secondary {
-    font-size: 1.4rem
+    font-size: 1.4rem;
   }
 </style>

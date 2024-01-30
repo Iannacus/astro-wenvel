@@ -1,0 +1,69 @@
+---
+import Heading from "../../atoms/typography/Heading.astro";
+
+const { words } = Astro.props;
+---
+
+<ul>
+  {
+    words.map((word: string, index: number) => (
+      <li style={`animation-delay: ${index * 2650}ms`}>
+        <Heading level={1} color="gradient">
+          {word}
+        </Heading>
+      </li>
+    ))
+  }
+</ul>
+
+<style define:vars={{ duration: `${words.length * 2650}ms` }}>
+  li {
+    animation: var(--duration) fade-up 0s ease-in-out infinite;
+    will-change: opacity, transform;
+    opacity: 0;
+    z-index: -1;
+    display: inline;
+    transform: translateY(100%);
+    position: absolute;
+  }
+
+  /* li:first-child {
+    opacity: 1;
+    animation:
+      var(--duration) fade-up-first 2650ms ease-in-out,
+      var(--duration) fade-up ease-in-out;
+    transform: translateY(0);
+  } */
+  li:last-child {
+    position: static;
+  }
+  @keyframes fade-up {
+    0% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    1.5%,
+    15.7% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    18%,
+    to {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+  }
+  @keyframes fade-up-first {
+    0%,
+    19.7% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    20%,
+    to {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+  }
+</style>

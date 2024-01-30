@@ -1,33 +1,43 @@
 ---
-import HeaderImages from '../molecules/header/HeaderImages.astro';
-import MainContainer from '../containers/MainContainer.astro';
-import Heading from '../atoms/typography/Heading.astro'
-import Text from '../atoms/typography/Text.astro';
-import Button from '../atoms/buttons/Button.astro';
+import HeaderImages from "../molecules/header/HeaderImages.astro";
+import MainContainer from "../containers/MainContainer.astro";
+import Heading from "../atoms/typography/Heading.astro";
+import Text from "../atoms/typography/Text.astro";
+import Button from "../atoms/buttons/Button.astro";
+import WordSlider from "../molecules/animations/WordSlider.astro";
+
+const words = ["Evento", "Boda", "Bautizo", "Quince años", "Cumpleaños"];
 ---
 
 <section>
   <MainContainer>
     <div class="two-rows">
       <div class="row1">
-        <Heading level={1} color="dark">
-          Invitaciones digitales para tu... 
-        </Heading>
+        <div>
+          <Heading level={1} color="dark">
+            Invitaciones digitales para tu
+          </Heading>
+          <Heading level={1} color="gradient"> Wenvel </Heading>
+        </div>
+        <div>
+          <WordSlider words={words} />
+        </div>
         <div class="hero-content">
           <Text variant="primary" color="grey">
-            Orions is a universal app that helps you setup your apps in a beautiful and effective way to get more
-            downloads acrossAndroid and iOS platforms. 
+            Orions is a universal app that helps you setup your apps in a
+            beautiful and effective way to get more downloads acrossAndroid and
+            iOS platforms.
           </Text>
         </div>
         <div class="button-group">
-          <Button 
+          <Button
             icon="fas fa-envelope"
             caption="Explora nuestras"
             variant="primary"
           >
             Plantillas
           </Button>
-          <Button 
+          <Button
             icon="fab fa-whatsapp"
             caption="contactanos por"
             variant="secondary"
@@ -39,10 +49,8 @@ import Button from '../atoms/buttons/Button.astro';
       <div class="row2">
         <HeaderImages />
       </div>
-      
     </div>
   </MainContainer>
-  
 </section>
 
 <style>
@@ -60,7 +68,7 @@ import Button from '../atoms/buttons/Button.astro';
     gap: 20px;
   }
 
-   @media (min-width: 1200px) {
+  @media (min-width: 1200px) {
     .two-rows {
       flex-direction: row;
       gap: 20px;
@@ -78,7 +86,7 @@ import Button from '../atoms/buttons/Button.astro';
     order: 1;
   }
 
-   @media (min-width: 1200px) {
+  @media (min-width: 1200px) {
     .row1 {
       width: 60%;
       order: 1;
@@ -94,16 +102,16 @@ import Button from '../atoms/buttons/Button.astro';
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items:center;
+    align-items: center;
     width: 100%;
-    gap: 10px
+    gap: 10px;
   }
 
   @media (min-width: 1200px) {
     .button-group {
       flex-direction: row;
       justify-content: flex-start;
-      gap: 20px
+      gap: 20px;
     }
   }
 
