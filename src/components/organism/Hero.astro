@@ -3,7 +3,7 @@ import HeaderImages from '../molecules/header/HeaderImages.astro';
 import MainContainer from '../containers/MainContainer.astro';
 import Heading from '../atoms/typography/Heading.astro'
 import Text from '../atoms/typography/Text.astro';
-import DownloadButton from '../atoms/buttons/DownloadButton.astro';
+import Button from '../atoms/buttons/Button.astro';
 ---
 
 <section>
@@ -20,34 +20,20 @@ import DownloadButton from '../atoms/buttons/DownloadButton.astro';
           </Text>
         </div>
         <div class="button-group">
-          <DownloadButton 
+          <Button 
             icon="fas fa-envelope"
             caption="Explora nuestras"
             variant="primary"
           >
             Plantillas
-          </DownloadButton>
-          <DownloadButton 
+          </Button>
+          <Button 
             icon="fab fa-whatsapp"
             caption="contactanos por"
             variant="secondary"
           >
             Whatsapp
-          </DownloadButton>
-        </div>
-        <div class="button-group">
-          <DownloadButton 
-            variant="primary"
-            single
-          >
-            Plantillas
-          </DownloadButton>
-          <DownloadButton 
-            variant="secondary"
-            single
-          >
-            Whatsapp
-          </DownloadButton>
+          </Button>
         </div>
       </div>
       <div class="row2">

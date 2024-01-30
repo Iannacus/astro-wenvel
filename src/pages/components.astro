@@ -1,0 +1,230 @@
+---
+  import Heading from "../components/atoms/typography/Heading.astro";
+import MainContainer from "../components/containers/MainContainer.astro";
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/atoms/buttons/Button.astro";
+---
+
+<Layout title="Wenvel componentes">
+  <MainContainer>
+    <Heading level={1} color="dark">
+      Buttons
+    </Heading>
+    <div class="two-columns">
+      <div class="item">
+        <Heading level={2} color="dark"> Botón primario </Heading>
+        <Button variant="primary">
+          Google Play
+        </Button>
+      </div>
+      <div class="item">
+        <Heading level={2} color="light">  Código </Heading>
+        <div class="code">
+          <pre>
+  &#60;<span class="c-blue">Button</span> <span class="c-green">variant</span><span class="c-red">=</span><span class="c-orange">"primary"</span>&#62;
+    Google Play
+  &#60;<span class="c-blue">Button</span>&#62;
+          </pre>
+        </div>
+      </div>
+    </div>
+    <!--  End of primary button -->
+
+    <div class="two-columns">
+      <div class="item">
+        <Button variant="primary" icon="fab fa-google-play">
+          Google Play
+        </Button>
+      </div>
+      <div class="item">
+        <Heading level={2} color="light">  Código </Heading>
+        <div class="code">
+          <pre>
+  &#60;<span class="c-blue">Button</span> <span class="c-green">variant</span><span class="c-red">=</span><span class="c-orange">"primary"</span> <span class="c-green">icon</span><span class="c-red">=</span><span class="c-orange">"fab fa-google-play"</span>&#62;
+    Google Play
+  &#60;<span class="c-blue">Button</span>&#62;
+          </pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- End of primary button with icon -->
+    <div class="two-columns">
+      <div class="item">
+        <Button variant="primary" icon="fab fa-google-play" caption="get it on">
+          Google Play
+        </Button>
+      </div>
+      <div class="item">
+        <Heading level={2} color="light">  Código </Heading>
+        <div class="code">
+          <pre>
+  &#60;<span class="c-blue">Button</span>
+    <span class="c-green">variant</span><span class="c-red">=</span><span class="c-orange">"primary"</span>
+    <span class="c-green">icon</span><span class="c-red">=</span><span class="c-orange">"fas fa-check"</span>
+    <span class="c-green">caption</span><span class="c-red">=</span><span class="c-orange">"im the caption of"</span>
+  &#62;
+    Primary button
+  &#60;<span class="c-blue">Button</span>&#62;
+          </pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- secundarios -->
+    <div class="two-columns">
+      <div class="item">
+        <Heading level={2} color="dark"> Botón Secundario </Heading>
+        <Button variant="secondary">
+          Scondary button
+        </Button>
+      </div>
+      <div class="item">
+        <Heading level={2} color="light"> Código </Heading>
+        <div class="code">
+          <pre>
+  &#60;<span class="c-blue">Button</span> <span class="c-green">variant</span><span class="c-red">=</span><span class="c-orange">"secondary"</span>&#62;
+    Secondary button
+  &#60;<span class="c-blue">Button</span>&#62;
+          </pre>
+        </div>
+      </div>
+    </div>
+    <!--  End of secondary button -->
+
+    <div class="two-columns">
+      <div class="item">
+        <Button variant="secondary" icon="fas fa-check">
+          Scondary button
+        </Button>
+      </div>
+      <div class="item">
+        <Heading level={2} color="light">  Código </Heading>
+        <div class="code">
+          <pre>
+  &#60;<span class="c-blue">Button</span> <span class="c-green">variant</span><span class="c-red">=</span><span class="c-orange">"secondary"</span> <span class="c-green">icon</span><span class="c-red">=</span><span class="c-orange">"fas fa-check"</span>&#62;
+    Secondary button
+  &#60;<span class="c-blue">Button</span>&#62;
+          </pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- End of primary button with icon -->
+    <div class="two-columns">
+      <div class="item">
+        <Button variant="secondary" icon="fas fa-check" caption="im the caption of">
+          Scondary button 
+        </Button>
+      </div>
+      <div class="item">
+        <Heading level={2} color="light">  Código </Heading>
+        <div class="code">
+          <pre>
+  &#60;<span class="c-blue">Button</span>
+    <span class="c-green">variant</span><span class="c-red">=</span><span class="c-orange">"secondary"</span>
+    <span class="c-green">icon</span><span class="c-red">=</span><span class="c-orange">"fas fa-check"</span>
+    <span class="c-green">caption</span><span class="c-red">=</span><span class="c-orange">"im the caption of"</span>
+  &#62;
+    Secondary button
+  &#60;<span class="c-blue">Button</span>&#62;
+          </pre>
+        </div>
+      </div>
+    </div>
+<!-- white button -->
+    <div class="two-columns dark">
+      <div class="item">
+        <Heading level={2} color="dark"> Botón primario </Heading>
+        <Button variant="white">
+          White button
+        </Button>
+      </div>
+      <div class="item">
+        <Heading level={2} color="light">  Código </Heading>
+        <div class="code">
+          <pre>
+  &#60;<span class="c-blue">Button</span> <span class="c-green">variant</span><span class="c-red">=</span><span class="c-orange">"white"</span>&#62;
+    White button
+  &#60;<span class="c-blue">Button</span>&#62;
+          </pre>
+        </div>
+      </div>
+    </div>
+    <!--  End of primary button -->
+
+    <div class="two-columns dark">
+      <div class="item">
+        <Button variant="white" icon="fas fa-check" color="primary">
+          White button
+        </Button>
+      </div>
+      <div class="item">
+        <Heading level={2} color="light">  Código </Heading>
+        <div class="code">
+          <pre>
+  &#60;<span class="c-blue">Button</span>
+    <span class="c-green">variant</span><span class="c-red">=</span><span class="c-orange">"white"</span>
+    <span class="c-green">icon</span><span class="c-red">=</span><span class="c-orange">"fas fa-check"</span>
+    <span class="c-green">color</span><span class="c-red">=</span><span class="c-orange">"primary"</span>
+  &#62;
+    white button
+  &#60;<span class="c-blue">Button</span>&#62;
+          </pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- End of primary button with icon -->
+    <div class="two-columns dark">
+      <div class="item">
+        <Button variant="white" icon="fas fa-check" caption="im the caption of" color="secondary">
+          White button 
+        </Button>
+      </div>
+      <div class="item">
+        <Heading level={2} color="light">  Código </Heading>
+        <div class="code">
+          <pre>
+  &#60;<span class="c-blue">Button</span>
+    <span class="c-green">variant</span><span class="c-red">=</span><span class="c-orange">"primary"</span>
+    <span class="c-green">icon</span><span class="c-red">=</span><span class="c-orange">"fas fa-check"</span>
+    <span class="c-green">color</span><span class="c-red">=</span><span class="c-orange">"secondary"</span>
+    <span class="c-green">caption</span><span class="c-red">=</span><span class="c-orange">"im the caption of"</span>
+  &#62;
+    Primary button
+  &#60;<span class="c-blue">Button</span>&#62;
+          </pre>
+        </div>
+      </div>
+    </div>
+  </MainContainer>
+</Layout>
+
+<style>
+  .two-columns {
+    display: flex;
+    justify-content: space-between;
+    width: 100%
+  }
+
+  .item {
+    width: 50%
+  }
+
+  pre {
+    font-size: 2rem;
+  }
+
+  .code {
+    background-color: #000;
+    color: #fff;
+    padding: 2rem 3rem 0 0;
+    border-radius: 3rem;
+    width: fit-content;
+  }
+
+  .dark {
+    background: #000
+  }
+</style>

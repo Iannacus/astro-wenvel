@@ -35,3 +35,7 @@
   color: #fff;
   fill: #fff;
 }
+
+.c-green {
+  color: var(--color-green-1);
+}

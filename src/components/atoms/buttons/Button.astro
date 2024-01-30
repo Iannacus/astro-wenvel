@@ -1,8 +1,8 @@
 ---
-  const {ref, icon, caption, variant, single} = Astro.props;
+  const {ref, icon, caption, variant, single, color} = Astro.props;
 
   const singleClasses = [{
-    'single': single
+    'single': single,
   }]
 
   const colorDictionary = {
@@ -11,15 +11,37 @@
       'background-gradient-start': 'var(--orange-drop-shadow-1)',
       'background-gradient-end': 'var(--gradient-purple-1)',
       'drop-shadow': 'var(--gradient-purple-1-rgba-2)',
-      'background-after': 'var(--orange-drop-shadow)'
+      'background-after': 'var(--orange-drop-shadow-1)',
+      'box-shadow': '',
+      'left': 0,
+      'left-hover': '100%',
+      'button-content-color': '#fff',
+      'button-content-hover': '#fff',
+      'button-icon-hover': '#fff'
     },
     secondary: {
-      'background-color': 'var(--gradient-red)',
+      'background-color': 'var(--orange-drop-shadow)',
       'background-gradient-start': 'var(--orange-drop-shadow)',
       'background-gradient-end': 'var(--gradient-purple-1)',
       'drop-shadow': 'var(--orange-drop-shadow-rgba-2)',
       'background-after': 'var(--orange-drop-shadow)',
+      'box-shadow': '',
+      'left': 0,
+      'left-hover': '100%',
+      'button-content-color': '#fff',
+      'button-content-hover': '#fff',
+      'button-icon-hover': '#fff'
     },
+    white: {
+      'background-color': '#fff',
+      'border-width': 'var(--border-width)',
+      'box-shadow':'inset 0px 0px 0px .3rem #FFFFFF',
+      'left': '100%',
+      'left-hover': 0,
+      'button-content-color': '#fff',
+      'button-content-hover': icon ? 'var(--font-dark)' : 'var(--gradient-purple)',
+      'button-icon-hover': color === 'primary' ? 'var(--orange-drop-shadow-1)' : color === 'secondary'  ? 'var(--orange-drop-shadow)' : 'var(--font-dark)',
+    }
   }
 ---
 
@@ -32,7 +54,7 @@
     )}
     <div class="button-content">
       {caption && <h5 >{caption}</h5>}
-      <h3 >
+      <h3 class="ls">
         <slot />
       </h3>
     </div>  
@@ -48,6 +70,7 @@
     border-radius: 4rem;
     border-top-left-radius: 0;
     overflow: hidden;
+    box-shadow: var(--box-shadow);
   }
 
   .button-inner {
@@ -63,7 +86,7 @@
     height: 100%;
     position: absolute;
     top: 0;
-    left: 0;
+    left: var(--left);
     z-index: 1;
     background: #fff;
     -webkit-transition: all 0.4s ease-in-out 0s;
@@ -84,12 +107,14 @@
       -webkit-transition: all 0.4s ease-in-out 0s;
       transition: all 0.4s ease-in-out 0s;
     }
+    color: #fff
   }
 
   .button-content {
     position: relative;
     z-index: 2;
     margin-left: 1.2rem;
+    color: var(--button-content-color)
   }
 
   .button-content h5 {
@@ -104,7 +129,7 @@
 
   .button-content h3 {
     font-size: 2rem;
-    letter-spacing: .2rem;
+    letter-spacing: -.1rem;
     font-weight: 700;
     margin: .3rem 0 0 0;
     -webkit-transition: all 0.4s ease-in-out 0s;
@@ -116,14 +141,13 @@
   }
 
   .button-background {
-    color: #fff;
-    background: var(--background-color);
     background: linear-gradient(
       270deg,
       var(--background-gradient-start) 0%,
       var(--background-gradient-end) 100%
     );
-    filter: drop-shadow(0px 10px 10px var(--drop-shadow))
+    
+    filter: drop-shadow(0px 10px 10px var(--drop-shadow));
   }
 
   .button-background .button-inner::after {
@@ -143,10 +167,14 @@
   }
 
   .button:hover .button-inner::after {
-    left: 100%;
+    left: var(--left-hover);
   }
 
   .button:hover .button-content h3, .button:hover .button-content h5 {
-    coclor: #fff
+    color: var(--button-content-hover)
+  }
+
+  .button:hover .button-icon {
+    color:  var(--button-icon-hover);
   }
 </style>
