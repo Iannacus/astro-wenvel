@@ -1,0 +1,32 @@
+---
+import MainContainer from "../../containers/MainContainer.astro";
+import Heading from "../../atoms/typography/Heading.astro";
+import Details from './react/Details';
+---
+
+<section class="full-h">
+  <img
+    style="width: 100%;"
+    src="/assets/pattern-1.jpg"
+    alt="backgorrund-pattern"
+  />
+  <MainContainer>
+    <div class="flex column gap-4 col-12">
+      <Heading level={5} color='blue'>
+        <i class="fas fa-gear" /> 
+        TU INVITACIÓN INCLUYE
+      </Heading>
+      <Details client:load />
+      </div>
+  </MainContainer>
+</section>
+
+<style>
+
+  .item {
+    border-bottom: 1px solid #cdcdcd;
+    padding: 2.5rem 1rem;
+  }
+</style>
+
+

@@ -33,34 +33,14 @@ html {
 
 @media (max-width: 600px) {
   html {
-    font-size: 51.5%;
+    font-size: 53.5%;
   }
 }
 
 body {
+  width: 100%;
   font-family: "Spartan", sans-serif;
   box-sizing: border-box;
 
   overflow-x: hidden;
-}
-
-@media (min-width: 1400px) {
-  .container,
-  .container-lg,
-  .container-md,
-  .container-sm,
-  .container-xl,
-  .container-xxl {
-    max-width: unset;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container,
-  .container-lg,
-  .container-md,
-  .container-sm,
-  .container-xl {
-    max-width: 1200px;
-  }
 }

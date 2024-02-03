@@ -17,6 +17,11 @@ const { words } = Astro.props;
 </ul>
 
 <style define:vars={{ duration: `${words.length * 2650}ms` }}>
+  ul {
+    display: inline;
+    position: absolute;
+  }
+
   li {
     animation: var(--duration) fade-up 0s ease-in-out infinite;
     will-change: opacity, transform;
@@ -26,14 +31,6 @@ const { words } = Astro.props;
     transform: translateY(100%);
     position: absolute;
   }
-
-  /* li:first-child {
-    opacity: 1;
-    animation:
-      var(--duration) fade-up-first 2650ms ease-in-out,
-      var(--duration) fade-up ease-in-out;
-    transform: translateY(0);
-  } */
   li:last-child {
     position: static;
   }
@@ -42,25 +39,13 @@ const { words } = Astro.props;
       opacity: 0;
       transform: translateY(100%);
     }
-    1.5%,
-    15.7% {
+    2.5%,
+    22.5% {
       opacity: 1;
       transform: translateY(0);
     }
 
-    18%,
-    to {
-      opacity: 0;
-      transform: translateY(-100%);
-    }
-  }
-  @keyframes fade-up-first {
-    0%,
-    19.7% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    20%,
+    25%,
     to {
       opacity: 0;
       transform: translateY(-100%);

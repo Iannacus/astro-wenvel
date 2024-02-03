@@ -1,0 +1,120 @@
+---
+import HeaderImages from "../../molecules/header/HeaderImages.astro";
+import MainContainer from "../../containers/MainContainer.astro";
+import Heading from "../../atoms/typography/Heading.astro";
+import Text from "../../atoms/typography/Text.astro";
+import Button from "../../atoms/buttons/Button.astro";
+import WordSlider from "../../molecules/animations/WordSlider.astro";
+
+const words = ["Evento", "Boda", "Bautizo", "Quince años"];
+---
+
+<section class="full-h flex center">
+  <MainContainer>
+    <div class="two-rows">
+      <div class="row1">
+        <div>
+          <Heading level={1} color="dark">
+            Las mejores <span class="gradient">invitaciones</span> digitales
+          </Heading>
+        </div>
+        <div></div>
+        <div class="hero-content">
+          <Text variant="large" color="grey">
+            Sorprende a tus invitados con una invitación digital donde puedes
+            mostrar <b>toda la información relevante en un solo lugar</b>.
+            Además <b>ahorra tiempo</b>, enviando las invitaciones por whatsapp,
+            messenger tan solo compartiendo un enlace.
+          </Text>
+        </div>
+        <div class="button-group">
+          <Button
+            icon="fas fa-envelope"
+            caption="Explora nuestras"
+            variant="primary"
+          >
+            Plantillas
+          </Button>
+          <Button
+            icon="fab fa-whatsapp"
+            caption="contactanos por"
+            variant="secondary"
+          >
+            Whatsapp
+          </Button>
+        </div>
+      </div>
+      <div class="row2">
+        <HeaderImages />
+      </div>
+    </div>
+  </MainContainer>
+</section>
+
+<style>
+  secction {
+    min-height: 100vh;
+    width: 100%;
+  }
+
+  .two-rows {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  @media (min-width: 990px) {
+    .two-rows {
+      flex-direction: row;
+      gap: 20px;
+    }
+  }
+
+  .row1 {
+    width: 90%;
+    padding-right: 10%;
+    order: 2;
+  }
+
+  .row2 {
+    width: 90%;
+    order: 1;
+  }
+
+  @media (min-width: 990px) {
+    .row1 {
+      width: 60%;
+      order: 1;
+    }
+
+    .row2 {
+      width: 40%;
+      order: 2;
+    }
+  }
+
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+  }
+
+  @media (min-width: 1200px) {
+    .button-group {
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 20px;
+    }
+  }
+
+  .hero-content {
+    margin: 3rem 0 4.8rem;
+  }
+</style>

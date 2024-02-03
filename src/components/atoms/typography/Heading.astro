@@ -1,5 +1,5 @@
 ---
-const { level, color } = Astro.props;
+const { level, color, align } = Astro.props;
 
 const classes = [
   "c-dark",
@@ -66,3 +66,14 @@ const classes = [
     )
   }
 </>
+
+<style define:vars={{ align }}>
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: var(--align);
+  }
+</style>

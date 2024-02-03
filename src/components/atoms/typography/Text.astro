@@ -1,5 +1,5 @@
 ---
-const { color, variant } = Astro.props;
+const { color, variant, align } = Astro.props;
 ---
 
 <p
@@ -11,17 +11,19 @@ const { color, variant } = Astro.props;
       "c-grey": color === "grey",
       primary: variant === "primary",
       secondary: variant === "secondary",
+      large: variant === "large",
     },
   ]}
 >
   <slot />
 </p>
 
-<style>
+<style define:vars={{ align }}>
   p {
     font-weight: 500;
     line-height: 3rem;
     margin: 0;
+    text-align: var(--align);
   }
   .primary {
     font-size: 1.6rem;
