@@ -1,7 +1,6 @@
 ---
-import MainContainer from "../../containers/MainContainer.astro";
-import Heading from "../../atoms/typography/Heading.astro";
-import Details from './react/Details';
+import { MainContainer, Heading } from "@components/index.js";
+import FeatureDetails from "./react/FeatureDetails";
 ---
 
 <section class="full-h">
@@ -12,21 +11,19 @@ import Details from './react/Details';
   />
   <MainContainer>
     <div class="flex column gap-4 col-12">
-      <Heading level={5} color='blue'>
-        <i class="fas fa-gear" /> 
+      <Heading level={5} color="blue">
+        <i class="fas fa-gear"></i>
         TU INVITACIÓN INCLUYE
       </Heading>
-      <Details client:load />
-      </div>
+      <FeatureDetails client:load />
+    </div>
   </MainContainer>
 </section>
 
 <style>
-
   .item {
     border-bottom: 1px solid #cdcdcd;
     padding: 2.5rem 1rem;
   }
 </style>
-
-
+./react/FeatureDetails

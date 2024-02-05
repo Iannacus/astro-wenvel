@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import DetailsList from "./DetailsList";
 import DetailsExpand from "./DetailsExpand";
-import { details } from "../../../../data/details";
+import { details } from "@data/details";
 
-export default function Details() {
+export default function FeatureDetails() {
   const [selected, setSelected] = useState("Presentación");
 
   const getDetails = (title) => {

@@ -1,4 +1,4 @@
-import BackgroundAnimation from "../../../react-components/BackgroundAnimation";
+import { BackgroundAnimation } from "@components/index.js";
 
 export default function DetailImage({ img }) {
   return (
