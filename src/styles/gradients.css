@@ -1,0 +1,8 @@
+.main-gradient {
+  background: linear-gradient(
+    45deg,
+    var(--gradient-purple-rgba) 20%,
+    var(--gradient-red-rgba) 50%,
+    var(--gradient-orange-rgba) 80%
+  );
+}

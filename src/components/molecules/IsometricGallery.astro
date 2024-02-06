@@ -1,0 +1,20 @@
+---
+import IsometricImage from "./IsometricImage.astro";
+
+const { images } = Astro.props;
+---
+
+<div class="wrapper">
+  {images.map((image, i) => <IsometricImage image={image} alt={i} />)}
+</div>
+
+<style>
+  .wrapper {
+    transform-style: preserve-3d;
+    transform: translateX(-300px) translateY(-500px) rotateX(45deg)
+      rotateZ(45deg);
+    display: grid;
+    grid-template-columns: repeat(4, 0fr);
+    gap: 20px;
+  }
+</style>

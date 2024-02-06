@@ -2,9 +2,20 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../modules/home/Hero.astro";
 import Details from "../modules/home/Details.astro";
+
+import { details } from "@data/details";
 ---
 
 <Layout title="Welcome to Astro.">
   <Hero />
-  <Details />
+  {
+    details.map((detail, i) => (
+      <Details
+        title={detail.title}
+        icon={detail.icon}
+        description={detail.description}
+        isOdd={i % 2 === 1}
+      />
+    ))
+  }
 </Layout>

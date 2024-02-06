@@ -1,14 +1,14 @@
 ---
 import { Heading } from "../../atoms";
 
-const { words } = Astro.props;
+const { words, align } = Astro.props;
 ---
 
 <ul>
   {
     words.map((word: string, index: number) => (
       <li style={`animation-delay: ${index * 2650}ms`}>
-        <Heading level={1} color="gradient">
+        <Heading level={1} color="gradient" align={align}>
           {word}
         </Heading>
       </li>
@@ -16,10 +16,18 @@ const { words } = Astro.props;
   }
 </ul>
 
-<style define:vars={{ duration: `${words.length * 2650}ms` }}>
+<style
+  define:vars={{
+    duration: `${words.length * 2650}ms`,
+    align,
+    width: `${align ? "100%" : "auto"}`,
+    position: `${align ? "relative" : "absolute"}`,
+  }}
+>
   ul {
     display: inline;
-    position: absolute;
+    position: var(--position);
+    width: var(--width);
   }
 
   li {
@@ -30,6 +38,8 @@ const { words } = Astro.props;
     display: inline;
     transform: translateY(100%);
     position: absolute;
+    width: var(--width);
+    text-align: var(--align);
   }
   li:last-child {
     position: static;

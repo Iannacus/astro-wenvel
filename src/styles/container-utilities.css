@@ -1,6 +1,18 @@
 .full-h {
   min-height: 100vh;
 }
+
+.fullheight {
+  height: 100vh;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: relative;
+}
 .flex {
   display: flex;
 }

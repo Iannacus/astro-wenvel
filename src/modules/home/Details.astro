@@ -1,21 +1,60 @@
 ---
-import { MainContainer, Heading } from "@components/index.js";
-import FeatureDetails from "./react/FeatureDetails";
+import {
+  MainContainer,
+  Heading,
+  Text,
+  IsometricGallery,
+} from "@components/index.js";
+
+const { title, description, icon, isOdd } = Astro.props;
 ---
 
-<section class="full-h">
-  <img
-    style="width: 100%;"
-    src="/assets/pattern-1.jpg"
-    alt="backgorrund-pattern"
-  />
+<section
+  class:list={[
+    "full-h",
+    "hidden",
+    {
+      "main-gradient": !isOdd,
+    },
+  ]}
+>
   <MainContainer>
-    <div class="flex column gap-4 col-12">
-      <Heading level={5} color="blue">
-        <i class="fas fa-gear"></i>
-        TU INVITACIÓN INCLUYE
-      </Heading>
-      <FeatureDetails client:load />
+    <div class="flex fullheight relative">
+      <div class="col-6 flex column gap-4 absolute header">
+        <Heading level={2} color={isOdd ? "gradient" : "white"} uppercase>
+          <span><i class={icon}></i></span>
+          {title}
+        </Heading>
+        <Text variant="primary" color={isOdd ? "grey" : "white"}>
+          {description}
+        </Text>
+      </div>
+      <div class="col-6">
+        <IsometricGallery
+          images={[
+            "/assets/muestras/muestra-3.png",
+            "/assets/muestras/muestra-4.png",
+            "/assets/muestras/muestra-5.png",
+            "/assets/bautizo_phone_1.png",
+            "/assets/muestras/muestra-3.png",
+            "/assets/muestras/muestra-4.png",
+            "/assets/muestras/muestra-5.png",
+            "/assets/bautizo_phone_1.png",
+            "/assets/muestras/muestra-3.png",
+            "/assets/muestras/muestra-4.png",
+            "/assets/muestras/muestra-5.png",
+            "/assets/bautizo_phone_1.png",
+            "/assets/muestras/muestra-3.png",
+            "/assets/muestras/muestra-4.png",
+            "/assets/muestras/muestra-5.png",
+            "/assets/bautizo_phone_1.png",
+            "/assets/muestras/muestra-3.png",
+            "/assets/muestras/muestra-4.png",
+            "/assets/muestras/muestra-5.png",
+            "/assets/bautizo_phone_1.png",
+          ]}
+        />
+      </div>
     </div>
   </MainContainer>
 </section>
@@ -25,5 +64,13 @@ import FeatureDetails from "./react/FeatureDetails";
     border-bottom: 1px solid #cdcdcd;
     padding: 2.5rem 1rem;
   }
+
+  .header {
+    top: 80px;
+    right: 0;
+  }
+
+  .hidden {
+    overflow: hidden;
+  }
 </style>
-./react/FeatureDetails

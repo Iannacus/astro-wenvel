@@ -9,9 +9,14 @@ import {
 
 import { MainContainer } from "./containers";
 
-import { Background1, WordSlider, HeaderImages } from "./molecules";
+import {
+  Background1,
+  WordSlider,
+  HeaderImages,
+  IsometricGallery,
+} from "./molecules";
 
-import { BackgroundAnimation } from "./react-components";
+import {} from "./organism";
 
 export {
   //Atoms
@@ -30,4 +35,5 @@ export {
 
   // React
   BackgroundAnimation,
+  IsometricGallery,
 };

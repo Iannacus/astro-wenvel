@@ -1,5 +1,5 @@
 ---
-const { level, color, align } = Astro.props;
+const { level, color, align, uppercase } = Astro.props;
 
 const classes = [
   "c-dark",
@@ -12,6 +12,7 @@ const classes = [
     "c-purple": color === "purple",
     "c-white": color === "white",
     gradient: color === "gradient",
+    uppercase: uppercase,
   },
 ];
 ---
@@ -75,5 +76,9 @@ const classes = [
   h5,
   h6 {
     text-align: var(--align);
+  }
+
+  .uppercase {
+    text-transform: uppercase;
   }
 </style>
