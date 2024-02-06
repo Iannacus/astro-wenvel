@@ -1,5 +1,6 @@
 ---
 import {
+  Button,
   MainContainer,
   Heading,
   Text,
@@ -19,8 +20,8 @@ const { title, description, icon, isOdd } = Astro.props;
   ]}
 >
   <MainContainer>
-    <div class="flex fullheight relative">
-      <div class="col-6 flex column gap-4 absolute header">
+    <div class="flex fullheight relative order">
+      <div class="flex column gap-4 absolute header gallery">
         <Heading level={2} color={isOdd ? "gradient" : "white"} uppercase>
           <span><i class={icon}></i></span>
           {title}
@@ -28,8 +29,9 @@ const { title, description, icon, isOdd } = Astro.props;
         <Text variant="primary" color={isOdd ? "grey" : "white"}>
           {description}
         </Text>
+        <Button variant="white">Ver todos</Button>
       </div>
-      <div class="col-6">
+      <div class="gallery">
         <IsometricGallery
           images={[
             "/assets/muestras/muestra-3.png",
@@ -65,12 +67,37 @@ const { title, description, icon, isOdd } = Astro.props;
     padding: 2.5rem 1rem;
   }
 
+  .gallery {
+    width: 100%;
+  }
+
+  @media (min-width: 990px) {
+    .gallery {
+      width: 50%;
+    }
+  }
   .header {
-    top: 80px;
-    right: 0;
+    top: 20px;
+  }
+
+  @media (min-width: 990px) {
+    .header {
+      top: 80px;
+      right: 0;
+    }
   }
 
   .hidden {
     overflow: hidden;
+  }
+
+  .order {
+    flex-direction: column;
+  }
+
+  @media (min-width: 990px) {
+    .order {
+      flex-direction: row;
+    }
   }
 </style>

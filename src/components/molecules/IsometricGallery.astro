@@ -11,10 +11,19 @@ const { images } = Astro.props;
 <style>
   .wrapper {
     transform-style: preserve-3d;
-    transform: translateX(-300px) translateY(-500px) rotateX(45deg)
-      rotateZ(45deg);
+    transform: translateX(-50px) translateY(-250px) rotateX(40deg)
+      rotateZ(35deg);
     display: grid;
     grid-template-columns: repeat(4, 0fr);
-    gap: 20px;
+    gap: 10px;
+  }
+
+  @media (min-width: 990px) {
+    .wrapper {
+      transform: translateX(-300px) translateY(-250px) rotateX(45deg)
+        rotateZ(45deg);
+      grid-template-columns: repeat(5, 0fr);
+      gap: 20px;
+    }
   }
 </style>

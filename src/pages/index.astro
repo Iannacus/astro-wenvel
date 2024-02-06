@@ -8,14 +8,9 @@ import { details } from "@data/details";
 
 <Layout title="Welcome to Astro.">
   <Hero />
-  {
-    details.map((detail, i) => (
-      <Details
-        title={detail.title}
-        icon={detail.icon}
-        description={detail.description}
-        isOdd={i % 2 === 1}
-      />
-    ))
-  }
+  <Details
+    title="Diseños"
+    icon="fas fa-pen-ruler"
+    description="Explora nuestra colección de invitaciones diseñadas meticulosamente para cada ocasión especial."
+  />
 </Layout>
